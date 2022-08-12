@@ -62,12 +62,12 @@ export default class creditController {
    */
   static async verify(req: Request, res: Response) {
     try {
-      // const { data } = req.body;
-      const { trxref } = req.query;
-      if (!trxref) return errorResponse(res, 404, "No transaction reference found.");
+      const { data } = req.body;
+      // const { trxref } = req.query;
+      // if (!trxref) return errorResponse(res, 404, "No transaction reference found.");
 
-      const resp: any = await verifyPayment(trxref as string);
-      const { data } = resp.data;
+      // const resp: any = await verifyPayment(trxref as string);
+      // const { data } = resp.data;
       const transaction: ICredit = await db("credits").first().where({ id: data.metadata.transactionId });
       
       if (!transaction) {

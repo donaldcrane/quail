@@ -16,7 +16,7 @@ const {
 router.get("/", verifyToken, getUserCredits);
 router.get("/:creditId", verifyToken,validator(validateId), getUserCreditById);
 
-router.get("/paystack/verify", verify);
+router.post("/paystack/verify", verify);
 
 router.post("/paystack/initialize", verifyToken,validator(creditValidation), addMoney);
 
