@@ -1,6 +1,6 @@
 import chai from "chai";
 import chaiHttp from "chai-http";
-import db from "../../models/index";
+import db from "../../config/database";
 import { user4, user8 } from "./user-sign-in-test-data";
 import { debit, debit2, debit3 } from "./debit-data";
 import server from "../../app";
@@ -64,16 +64,16 @@ describe("Add debit Transaction", () => {
 
 describe("Delete debit Transaction", () => {
   beforeEach(async () => {
-    await db.debit.deleteMany({});
-    await db.debit.create({
-      data: {
-      id: "c375c640-81ff-405a-89a8-460ea2f71875",
-      user: "1d809e97-e26e-4597-aff3-070d6bf4599d",
-      amount: 10000,
-      receiver: "1857f7f4-a3e0-4bd4-b1f3-b98c045b4ed2",
-      type: "transfer"
-      }
-    });
+    // await db.debit.deleteMany({});
+    // await db.debit.create({
+    //   data: {
+    //   id: "c375c640-81ff-405a-89a8-460ea2f71875",
+    //   user: "1d809e97-e26e-4597-aff3-070d6bf4599d",
+    //   amount: 10000,
+    //   receiver: "1857f7f4-a3e0-4bd4-b1f3-b98c045b4ed2",
+    //   type: "transfer"
+    //   }
+    // });
   });
   let userToken: string;
   before(done => {
@@ -125,23 +125,23 @@ describe("Delete debit Transaction", () => {
 
 describe("GET Debit Transactions api route", () => {
   beforeEach(async () => {
-    await db.debit.deleteMany({});
-    await db.debit.create({
-      data: { 
-      id: "c375c640-81ff-405a-89a8-460ea2f71875",
-      user: "1d809e97-e26e-4597-aff3-070d6bf4599d",
-      amount: 10000,
-      receiver: "1857f7f4-a3e0-4bd4-b1f3-b98c045b4ed2",
-      type: "transfer"
-    }});
-    await db.debit.create({
-      data: {
-      id: "a430e505-937b-4908-9422-7aa57044e5b8",
-      user: "1d809e97-e26e-4597-aff3-070d6bf4599d",
-      amount: 6000,
-      receiver: "1857f7f4-a3e0-4bd4-b1f3-b98c045b4ed2",
-      type: "transfer"
-    }});
+    // await db.debit.deleteMany({});
+    // await db.debit.create({
+    //   data: { 
+    //   id: "c375c640-81ff-405a-89a8-460ea2f71875",
+    //   user: "1d809e97-e26e-4597-aff3-070d6bf4599d",
+    //   amount: 10000,
+    //   receiver: "1857f7f4-a3e0-4bd4-b1f3-b98c045b4ed2",
+    //   type: "transfer"
+    // }});
+    // await db.debit.create({
+    //   data: {
+    //   id: "a430e505-937b-4908-9422-7aa57044e5b8",
+    //   user: "1d809e97-e26e-4597-aff3-070d6bf4599d",
+    //   amount: 6000,
+    //   receiver: "1857f7f4-a3e0-4bd4-b1f3-b98c045b4ed2",
+    //   type: "transfer"
+    // }});
   });
   let userToken: string;
   before(done => {

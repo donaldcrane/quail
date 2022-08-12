@@ -1,6 +1,6 @@
 import chai from "chai";
 import chaiHttp from "chai-http";
-import db from "../../models/index";
+import db from "../../config/database";
 import { user4 } from "./user-sign-in-test-data";
 import { credit, credit2, credit3 } from "./credit-data";
 import server from "../../app";
@@ -63,18 +63,18 @@ describe("Add credit", () => {
 
 describe("Delete credit Transaction", () => {
   beforeEach(async () => {
-    await db.credit.deleteMany({});
-    await db.credit.create({
-      data: {
-        id: "c375c640-81ff-405a-89a8-460ea2f71745",
-        user: "1d809e97-e26e-4597-aff3-070d6bf4599d",
-        amount: 40000,
-        type: "card_payment",
-        sender: "1d809e97-e26e-4597-aff3-070d6bf4599d",
-        reference: "njskcc",
-        status: "success"
-      }
-    });
+    // await db.credit.deleteMany({});
+    // await db.credit.create({
+    //   data: {
+    //     id: "c375c640-81ff-405a-89a8-460ea2f71745",
+    //     user: "1d809e97-e26e-4597-aff3-070d6bf4599d",
+    //     amount: 40000,
+    //     type: "card_payment",
+    //     sender: "1d809e97-e26e-4597-aff3-070d6bf4599d",
+    //     reference: "njskcc",
+    //     status: "success"
+    //   }
+    // });
   });
   let userToken: string;
   before(done => {
@@ -126,28 +126,28 @@ describe("Delete credit Transaction", () => {
 
 describe("GET credit api route", () => {
   beforeEach(async () => {
-    await db.credit.deleteMany({});
-    await db.credit.create({
-      data: {
-        id: "c375c640-81ff-405a-89a8-460ea2f71757",
-        user: "1d809e97-e26e-4597-aff3-070d6bf4599d",
-        amount: 40000,
-        type: "card_payment",
-        sender: "1d809e97-e26e-4597-aff3-070d6bf4599d",
-        reference: "njskcc",
-        status: "success"
-      }
-    });
-    await db.credit.create({
-      data: {
-        id: "5587d202-580b-46cb-a58f-37344694130a",
-        user: "1d809e97-e26e-4597-aff3-070d6bf4599d",
-        amount: 50000,
-        type: "card_payment",
-        sender: "1d809e97-e26e-4597-aff3-070d6bf4599d",
-        reference: "njskcc",
-        status: "success"
-      }});
+    // await db.credit.deleteMany({});
+    // await db.credit.create({
+    //   data: {
+    //     id: "c375c640-81ff-405a-89a8-460ea2f71757",
+    //     user: "1d809e97-e26e-4597-aff3-070d6bf4599d",
+    //     amount: 40000,
+    //     type: "card_payment",
+    //     sender: "1d809e97-e26e-4597-aff3-070d6bf4599d",
+    //     reference: "njskcc",
+    //     status: "success"
+    //   }
+    // });
+  //   await db.credit.create({
+  //     data: {
+  //       id: "5587d202-580b-46cb-a58f-37344694130a",
+  //       user: "1d809e97-e26e-4597-aff3-070d6bf4599d",
+  //       amount: 50000,
+  //       type: "card_payment",
+  //       sender: "1d809e97-e26e-4597-aff3-070d6bf4599d",
+  //       reference: "njskcc",
+  //       status: "success"
+  //     }});
   });
   let userToken: string;
   before(done => {
