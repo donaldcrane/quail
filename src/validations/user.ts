@@ -1,4 +1,4 @@
-import Joi from 'joi';
+import Joi from "joi";
 
 export const validateSignup = {
   body: Joi.object({
@@ -31,7 +31,7 @@ export const validateAccount = {
 };
 
 export const profileValidation = {
- body: Joi.object({ 
+  body: Joi.object({
     firstName: Joi.string().min(3).max(26),
     lastName: Joi.string().min(3).max(26),
   }).messages({

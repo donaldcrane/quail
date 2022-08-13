@@ -9,7 +9,6 @@ export const creditValidation = {
   })
 };
 
-
 export const validateId = {
   params: Joi.object({
     creditId: objectId.messages({
@@ -20,4 +19,3 @@ export const validateId = {
     "object.unknown": "You have used an invalid key."
   })
 };
-

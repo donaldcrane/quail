@@ -22,7 +22,6 @@ export const withdrawalValidation = {
   })
 };
 
-
 export const validateId = {
   params: Joi.object({
     debitId: objectId.messages({
@@ -33,4 +32,3 @@ export const validateId = {
     "object.unknown": "You have used an invalid key."
   })
 };
-

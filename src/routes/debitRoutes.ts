@@ -14,11 +14,11 @@ const {
 } = AdminDebitController;
 
 router.get("/", verifyToken, getDebitTransactions);
-router.get("/:debitId", verifyToken,validator(validateId), getDebitTransactionById);
+router.get("/:debitId", verifyToken, validator(validateId), getDebitTransactionById);
 
-router.post("/", verifyToken,validator(debitValidation), sendMoney);
-router.patch("/withdrawal", verifyToken,validator(withdrawalValidation), requestWithdrawal);
+router.post("/", verifyToken, validator(debitValidation), sendMoney);
+router.patch("/withdrawal", verifyToken, validator(withdrawalValidation), requestWithdrawal);
 
-router.delete("/:debitId", verifyToken,validator(validateId), deleteDebitTransaction);
+router.delete("/:debitId", verifyToken, validator(validateId), deleteDebitTransaction);
 
 export default router;

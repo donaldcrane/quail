@@ -24,6 +24,13 @@ export interface ILogin {
   password: string
 }
 
+export interface IAccount {
+  id: string
+  bankName: string
+  owner: string
+  accountNo: string
+}
+
 export interface IBeneficiary {
   beneficiaryId: string
 }

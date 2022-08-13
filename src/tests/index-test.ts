@@ -7,7 +7,7 @@ chai.should();
 chai.use(chaiHttp);
 
 describe("/ Welcome to Fusion app", () => {
-  it("it should get the welcome page", done => {
+  it("it should get the welcome page", (done) => {
     chai
       .request(server)
       .get("/")

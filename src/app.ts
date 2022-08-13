@@ -1,11 +1,12 @@
-import { Request, Response, NextFunction } from "express";
-import express from "express";
+/* eslint-disable @typescript-eslint/no-namespace */
+/* eslint-disable @typescript-eslint/no-empty-interface */
+import express, { Request, Response } from "express";
 import cors from "cors";
 import router from "./routes/index";
 import config from "./config";
 
 import reqLogger from "./utils/reqLogger";
-import { CustomRequest } from "../src/utils/interface";
+import { CustomRequest } from "./utils/interface";
 
 const app = express();
 const port = config.PORT || 5000;
@@ -19,10 +20,8 @@ declare global {
   }
 }
 
-app.use(reqLogger) // request logger
+app.use(reqLogger); // request logger
 app.use("/api/v1", router);
-
-
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Welcome to Quail app");

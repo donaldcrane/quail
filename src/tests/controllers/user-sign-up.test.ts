@@ -1,20 +1,16 @@
 import chai from "chai";
 import chaiHttp from "chai-http";
 import server from "../../app";
-import {
-  user,
-  user2,
-  user3
-} from "./user-sign-up-test-data";
+import { user, user2, user3 } from "./user-sign-up-test-data";
 
 chai.should();
 chai.use(chaiHttp);
 describe("Should test all users", async () => {
-  describe("/api/v1/users/signup should create a user", () => {
-    it("it should create a user with complete details successfully", done => {
+  describe("/api/v1/users/register should create a user", () => {
+    it("it should create a user with complete details successfully", (done) => {
       chai
         .request(server)
-        .post("/api/v1/users/signup")
+        .post("/api/v1/users/register")
         .set("Accept", "application/json")
         .send(user)
         .end((err, res) => {
@@ -25,10 +21,10 @@ describe("Should test all users", async () => {
           done();
         });
     });
-    it("it should not create a user with incomplete details", done => {
+    it("it should not create a user with incomplete details", (done) => {
       chai
         .request(server)
-        .post("/api/v1/users/signup")
+        .post("/api/v1/users/register")
         .set("Accept", "application/json")
         .send(user2)
         .end((err, res) => {
@@ -36,10 +32,10 @@ describe("Should test all users", async () => {
           done();
         });
     });
-    it("it should not signup a user with an already registered email", done => {
+    it("it should not register a user with an already registered email", (done) => {
       chai
         .request(server)
-        .post("/api/v1/users/signup")
+        .post("/api/v1/users/register")
         .set("Accept", "application/json")
         .send(user3)
         .end((err, res) => {

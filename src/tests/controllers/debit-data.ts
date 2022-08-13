@@ -1,6 +1,6 @@
 const debit = {
   amount: 10,
-  email: "donaldboy1@gmail.com",
+  email: "peter@gmail.com",
 };
 const debit2 = {
   email: "obi@gmail.com",

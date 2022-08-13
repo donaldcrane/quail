@@ -23,7 +23,7 @@
         "@typescript-eslint/indent": ["error", 2],
         "@typescript-eslint/no-unused-vars": "error",
         // "@typescript-eslint/no-explicit-any": "error",
-        "ignoreRestArgs": true,
+        "ignoreRestArgs": 0,
         "camelcase": "off",
         "no-console": "off",
         "linebreak-style": "off",

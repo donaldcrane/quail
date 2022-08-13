@@ -1,13 +1,12 @@
 import { Request, Response, NextFunction } from "express";
-import {errorResponse} from '../utils/responses';
 import jwt from "jsonwebtoken";
+import { errorResponse } from "../utils/responses";
 import db from "../config/database";
 
 import config from "../config";
 
-
 /**
- * @class Authentication  
+ * @class Authentication
  * @description authenticate token and roles
  * @exports Authentication
  */
@@ -28,13 +27,13 @@ export default class Authentication {
             return next();
           }
         } else {
-          return errorResponse(res, 401,"Invalid authorization format" );
+          return errorResponse(res, 401, "Invalid authorization format");
         }
       } else {
-        return errorResponse(res, 401, "Authorization not found" );
+        return errorResponse(res, 401, "Authorization not found");
       }
     } catch (error: any) {
-      return errorResponse(res, 500,error.message );
+      return errorResponse(res, 500, error.message);
     }
   }
 }
