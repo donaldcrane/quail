@@ -1,5 +1,9 @@
 # Quail
+
+[![test](https://github.com/donaldcrane/quail/actions/workflows/.node.js.yml/badge.svg)](https://github.com/donaldcrane/quail/actions/workflows/.node.js.yml)
+
 [![Coverage Status](https://coveralls.io/repos/github/donaldcrane/quail/badge.svg?branch=main)](https://coveralls.io/github/donaldcrane/quail?branch=main)
+
 Quail is a RESTful API service Fintech management app
 
 # Documentation
